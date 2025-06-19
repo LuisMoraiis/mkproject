@@ -16,6 +16,7 @@ mkproject nome-do-projeto
 
 ## Estrutura
 
+```bash
 meu_projeto/
 ├── app.py                            # Interface principal com Streamlit
 ├── requirements.txt                  # Dependências
@@ -38,3 +39,4 @@ meu_projeto/
 └── pages/
     ├── 1_Exploracao.py              # Página de análise exploratória
     └── 2_Modelagem.py               # Página de visualização/modelagem
+```
