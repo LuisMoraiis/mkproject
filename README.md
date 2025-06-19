@@ -1,4 +1,4 @@
-# mkproject 🚀
+# mkproject 📁🧪
 
 Ferramenta CLI para criar estrutura base de projetos Data Science.
 
