@@ -42,6 +42,6 @@ meu_projeto/
 │   └── helpers.py                   # Funções auxiliares (ex: formatação, gráficos)
 │
 └── pages/
-    ├── 1_Exploracao.py              # Página de análise exploratória
-    └── 2_Modelagem.py               # Página de visualização/modelagem
+    ├── exploracao.py              # Página de análise exploratória
+    └── modelagem.py               # Página de visualização/modelagem
 ```
