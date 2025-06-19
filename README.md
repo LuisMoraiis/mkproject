@@ -12,6 +12,7 @@ pip install -e .
 
 ```bash
 mkproject nome-do-projeto
+```
 
 ## Estrutura
 
