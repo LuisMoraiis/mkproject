@@ -6,7 +6,6 @@ import click
 @click.command()
 @click.argument('nome_do_projeto')
 def cli(nome_do_projeto):
-    """Cria estrutura base de um projeto Streamlit com ambiente virtual .env"""
     estrutura = [
         f"{nome_do_projeto}/data/raw",
         f"{nome_do_projeto}/data/processed",
@@ -17,15 +16,15 @@ def cli(nome_do_projeto):
     ]
 
     arquivos = {
-        f"{nome_do_projeto}/app.py": 'import streamlit as st\n\nst.title("Meu Projeto Streamlit 🎯")',
+        f"{nome_do_projeto}/app.py": 'import streamlit as st\n\nst.title("")',
         f"{nome_do_projeto}/requirements.txt": "streamlit\npandas\nmatplotlib\nscikit-learn",
         f"{nome_do_projeto}/analysis/__init__.py": "",
-        f"{nome_do_projeto}/analysis/pre_processamento.py": "# Funções de pré-processamento de dados\n",
-        f"{nome_do_projeto}/analysis/estatisticas.py": "# Estatísticas descritivas\n",
-        f"{nome_do_projeto}/models/__init__.py": "# Inicializador de modelos\n",
-        f"{nome_do_projeto}/utils/helpers.py": "# Funções auxiliares\n",
-        f"{nome_do_projeto}/pages/1_Exploracao.py": 'import streamlit as st\n\nst.title("🔍 Análise Exploratória")',
-        f"{nome_do_projeto}/pages/2_Modelagem.py": 'import streamlit as st\n\nst.title("🤖 Modelagem de Dados")',
+        f"{nome_do_projeto}/analysis/pre_processamento.py": "import pandas as pd",
+        f"{nome_do_projeto}/analysis/estatisticas.py": "import pandas as pd",
+        f"{nome_do_projeto}/models/__init__.py": "",
+        f"{nome_do_projeto}/utils/helpers.py": "",
+        f"{nome_do_projeto}/pages/exploracao.py": 'import streamlit as st\n\nst.title("🔍 Análise Exploratória")',
+        f"{nome_do_projeto}/pages/modelagem.py": 'import streamlit as st\n\nst.title("🤖 Modelagem de Dados")',
     }
 
     for path in estrutura:
@@ -35,7 +34,7 @@ def cli(nome_do_projeto):
         with open(path, "w") as f:
             f.write(content)
 
-    # Criação do ambiente virtual como .env
+
     env_path = os.path.join(nome_do_projeto, ".env")
     click.echo(f"🔧 Criando ambiente virtual em '{env_path}'...")
     subprocess.run([sys.executable, "-m", "venv", env_path])

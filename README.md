@@ -4,8 +4,13 @@ Ferramenta CLI para criar estrutura base de projetos Data Science.
 
 ## Instalação
 
+### Recomendado instalar atravez do pipx:
+
 ```bash
-pip install -e .
+brew install pipx
+pipx ensurepath
+# Reinicie seu terminal após esse comando
+pipx install ~/path/mkproject
 ```
 
 ## Uso
